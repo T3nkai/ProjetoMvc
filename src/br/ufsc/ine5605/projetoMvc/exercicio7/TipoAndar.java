@@ -14,6 +14,5 @@ public enum  TipoAndar {
     COMERCIAL,
     RESIDENCIAL,
     MISTO,
-    TERREO
-    ;
+    TERREO;
 }

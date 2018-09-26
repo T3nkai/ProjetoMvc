@@ -5,8 +5,14 @@ package br.ufsc.ine5605.projetoMvc.exercicio7;/*
  */
 
 import br.ufsc.ine5605.projetoMvc.exercicio7.Interfaces.IElevador;
+/*
+ * Universidade Federal de Santa Catarina.
+ * CTC - Centro Tecnologico - http://ctc.ufsc.br
+ * INE - Departamento de Informatica e Estatistica - http://inf.ufsc.br
+ */
 
 /**
+ *
  * @author Jean Hauck
  */
 public class Elevador implements IElevador {
@@ -57,11 +63,12 @@ public class Elevador implements IElevador {
     }
 
     public String descer() throws ElevadorJahNoTerreoException{
-        if(andarAtual >= 1){
+        if(andarAtual > 0){
             andarAtual--;
         }else{
             throw new ElevadorJahNoTerreoException();
         }
+
         return "elevador desceu para o andar "+andarAtual;
     }
 
@@ -87,12 +94,12 @@ public class Elevador implements IElevador {
     public String subir() throws ElevadorJahNoUltimoAndarException{
 
 
-        if(andarAtual < totalAndaresPredio){
-            andarAtual = andarAtual +1;
+        if(totalAndaresPredio > andarAtual ){
+            andarAtual++;
         }else{
             throw new ElevadorJahNoUltimoAndarException();
         }
-        System.out.println(" subiu e andar Atual" +andarAtual);
+
 
         return "elevador subiu para o andar "+andarAtual;
     }

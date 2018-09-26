@@ -8,10 +8,6 @@ package br.ufsc.ine5605.projetoMvc.exercicio7;
 import br.ufsc.ine5605.projetoMvc.exercicio7.Interfaces.IControladorElevador;
 import br.ufsc.ine5605.projetoMvc.exercicio7.Interfaces.IElevador;
 
-/**
- *
- * @author Jean Hauck
- */
 public class ControladorElevador implements IControladorElevador {
 
 
@@ -24,11 +20,8 @@ public class ControladorElevador implements IControladorElevador {
      * @throws ElevadorJahNoUltimoAndarException
      */
     public String subir() throws ElevadorJahNoUltimoAndarException {
-        try {
-            return this.elevador.subir();
-        } catch (ElevadorJahNoUltimoAndarException message) {
-            return message.getMessage();
-        }
+        return this.elevador.subir();
+
     }
 
 
@@ -40,11 +33,7 @@ public class ControladorElevador implements IControladorElevador {
      * @throws ElevadorJahNoTerreoException
      */
     public String descer() throws ElevadorJahNoTerreoException {
-        try {
-            return this.elevador.descer();
-        } catch (ElevadorJahNoTerreoException message) {
-            return message.getMessage();
-        }
+        return this.elevador.descer();
     }
 
 
@@ -56,11 +45,7 @@ public class ControladorElevador implements IControladorElevador {
      * @throws ElevadorCheioException
      */
     public String entraPessoa() throws ElevadorCheioException {
-        try {
-            return this.elevador.entraPessoa();
-        } catch (ElevadorCheioException e) {
-            return e.getMessage();
-        }
+        return this.elevador.entraPessoa();
     }
 
 
@@ -72,11 +57,7 @@ public class ControladorElevador implements IControladorElevador {
      * @throws ElevadorJahVazioException
      */
     public String saiPessoa() throws ElevadorJahVazioException {
-        try {
-            return this.elevador.saiPessoa();
-        } catch (ElevadorJahVazioException message) {
-            return message.getMessage();
-        }
+        return this.elevador.saiPessoa();
 
     }
 
@@ -99,7 +80,7 @@ public class ControladorElevador implements IControladorElevador {
      * @return retorna o Elevador instanciado como um IElevador
      */
     public IElevador inicializarElevador(int andarAtual, int totalAndaresPredio, int capacidade, int totalPessoas) {
-        this.elevador = new Elevador(capacidade, totalAndaresPredio, andarAtual, andarAtual);
+        this.elevador = new Elevador(capacidade, totalPessoas, totalAndaresPredio, andarAtual);
         return this.elevador;
     }
 
