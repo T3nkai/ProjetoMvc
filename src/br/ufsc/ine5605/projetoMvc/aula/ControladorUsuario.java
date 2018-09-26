@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ufsc.ine5605.ProjetoMvc;
+package br.ufsc.ine5605.projetoMvc.aula;
 
 import java.util.ArrayList;
 
@@ -16,14 +16,19 @@ public class ControladorUsuario {
     
     public ControladorUsuario(ControladorPrincipal controladorPrin) {
         this.controladorPrin = controladorPrin;
+
         this.telaUsuario = new TelaUsuario(this);
         this.usuarios = new ArrayList<>();
     }
+
 
     public void mostraMenuUsuario() {
         telaUsuario.mostraMenuUsuario();
     }
 
+    public void menuTelaPrincipal(){
+        controladorPrin.iniciaSistema();
+    }
     public void listaUsuarios() {
         ArrayList<ConteudoTelaUsuario> listagemUsuarios = new ArrayList<>();
         

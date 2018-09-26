@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ufsc.ine5605.ProjetoMvc;
+package br.ufsc.ine5605.projetoMvc.aula;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -28,16 +28,19 @@ public class TelaUsuario {
             System.out.println("[1] - Novo Usuario");
             System.out.println("[2] - Alterar Usuario");
             System.out.println("[3] - Listar Usuarios");
-            System.out.println("[0] - Retornar Tela Principal");
+            System.out.println("[4] - Tela principal");
+            System.out.println("[0] -");
             opcao = leValorInteiro();
 
             switch(opcao){
 
-                case 0: retornaMenuprincipal();
-                    break;
+//                case 0: retornaMenuprincipal();
+//                    break;
                 case 1: mostraTelaCadastroUsuario();
                     break;
                 case 3: controladorUsu.listaUsuarios();
+                    break;
+                case 4: controladorUsu.menuTelaPrincipal();
                     break;
             }
         }while(opcao!=0);
@@ -68,8 +71,6 @@ public class TelaUsuario {
         return i;
     }
 
-    private void retornaMenuprincipal() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
     
 }
